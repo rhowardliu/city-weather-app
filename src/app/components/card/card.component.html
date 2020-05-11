@@ -3,7 +3,7 @@
         <app-blank-item class = "panel card" [enterCity]="enterCity" [searchNotFound]="searchNotFound" (searchCity)="onSearchCity($event)"></app-blank-item>
     </div>
     <ng-template #cityItem>
-        <app-city-item class="panel card" [city]="city" ></app-city-item>
+        <app-city-item class="panel card" [city]="city" (editCity)="onEditCity()" ></app-city-item>
     </ng-template>
 </div>
 

@@ -1,5 +1,5 @@
-<label class="text-capitalize">{{city.name}}</label>
+<p class="text-capitalize bg-info">{{city.name}}</p>
 {{city.weatherMain}} - {{city.weatherDesc}}
-<div class = "d-flex justify-content-end">
-    <button type="button" class="align-bottom btn-sm w-50 btn btn-outline-light">edit</button>
+<div class = "d-flex justify-content-end align-items-end h-100">
+    <button type="button" (click)="onClick()" class="btn-sm w-50 btn btn-outline-light">edit</button>
 </div>

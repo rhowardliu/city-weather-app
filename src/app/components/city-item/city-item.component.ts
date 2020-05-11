@@ -10,9 +10,15 @@ import { CardComponent } from '../card/card.component';
 })
 export class CityItemComponent implements OnInit {
   @Input() city:City;
+  @Output() editCity = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClick(){
+    this.editCity.emit();
+
   }
 
   // setClasses() {
@@ -22,9 +28,6 @@ export class CityItemComponent implements OnInit {
   //   }
   //   return classes;
   // }
-
-
-
 
 
 }

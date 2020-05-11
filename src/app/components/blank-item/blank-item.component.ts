@@ -16,10 +16,12 @@ export class BlankItemComponent implements OnInit {
 
   onEnter(cityInput){
     this.searchCity.emit(cityInput.value);
+    cityInput.value = '';
   }
 
   onClickBlank(){
     this.enterCity = true;
   }
+
 
 }

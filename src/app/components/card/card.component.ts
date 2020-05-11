@@ -19,6 +19,12 @@ export class CardComponent implements OnInit {
     this.enterCity = false;
     this.searchNotFound = false;
   }
+
+  onEditCity(){
+    this.enterCity = true;
+    this.city.cityFound = false;
+    this.searchNotFound = false;
+  }
   
   onSearchCity(newInput:string){
     console.log('reached!');
@@ -34,5 +40,6 @@ export class CardComponent implements OnInit {
     })
   }
 
+  
 
 }

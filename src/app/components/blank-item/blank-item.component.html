@@ -1,13 +1,14 @@
-    <div *ngIf="this.enterCity; else blankItem">
-        <input #cityInput type="text" (keyup.enter)="onEnter(cityInput)" class="form-control" placeholder="Enter city" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-        <div *ngIf="this.searchNotFound">
-            <p class="text-light bg-dark">City not found. Please enter again.</p>
-        </div>
+   
+<div *ngIf="this.enterCity; else blankItem">
+    <input #cityInput type="text" (keyup.enter)="onEnter(cityInput)" class="form-control" placeholder="Enter city" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    <div *ngIf="this.searchNotFound">
+        <p class="text-light bg-dark">City not found. Please enter again.</p>
     </div>
-    <ng-template #blankItem>
-        <div class="blank h-100 w-100" (click)="onClickBlank()">
-            <h5>Search</h5>
-        </div>
-    </ng-template>
+</div>
+<ng-template #blankItem>
+    <div class="blank h-100 w-100" (click)="onClickBlank()">
+        <h5>Search</h5>
+    </div>
+</ng-template>
 
 
