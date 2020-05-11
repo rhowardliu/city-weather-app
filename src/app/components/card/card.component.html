@@ -1,0 +1,9 @@
+<div class="col my-2">
+    <div *ngIf="!city.cityFound; else cityItem">
+        <app-blank-item class = "panel card" [enterCity]="enterCity" [searchNotFound]="searchNotFound" (searchCity)="onSearchCity($event)"></app-blank-item>
+    </div>
+    <ng-template #cityItem>
+        <app-city-item class="panel card" [city]="city" ></app-city-item>
+    </ng-template>
+</div>
+

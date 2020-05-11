@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { City } from '../../models/City'
-import { CityService } from "../../services/city.service";
+import { CardComponent } from '../card/card.component';
 // import { createInput } from '@angular/compiler/src/core';
 
 @Component({
@@ -10,23 +10,21 @@ import { CityService } from "../../services/city.service";
 })
 export class CityItemComponent implements OnInit {
   @Input() city:City;
-
-  constructor(private cityService:CityService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  setClasses() {
-    let classes = {
-      default:this.city.default,
-      card: true
-    }
-    return classes;
-  }
+  // setClasses() {
+  //   let classes = {
+  //     default:this.city.default,
+  //     card: true
+  //   }
+  //   return classes;
+  // }
 
-  onEnter(city:City, newInput){
-    this.cityService.updateCity(city, newInput.value);
-    newInput.value = null;
-  }
+
+
+
 
 }

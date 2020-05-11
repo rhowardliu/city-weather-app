@@ -1,0 +1,9 @@
+.panel{
+    display: flex;
+    height: 7rem;
+    width: 9rem;
+    background: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}

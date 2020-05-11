@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { City } from './models/City'
-import {CityService} from './services/city.service'
 
 @Component({
   selector: 'app-root',
@@ -10,9 +9,14 @@ import {CityService} from './services/city.service'
 export class AppComponent {
   title = 'polybee';
   cities:City[];
-  constructor(private cityService:CityService){}
+  constructor(){}
   ngOnInit(){
-    this.cities = this.cityService.getDefaultCities();
+    this.cities = this.getDefaultCities();
+  }
+  getDefaultCities(){
+    return [
+      new City, new City, new City, new City, new City, new City, new City, new City, new City, 
+    ]
   }
 
 }

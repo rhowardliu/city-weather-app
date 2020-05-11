@@ -1,7 +1,5 @@
-<div class="col my-2">
-    <div [ngClass]="setClasses()">
-        <label class="text-capitalize">{{city.name}}</label>
-        <input #cityInput type="text" (keyup.enter)=onEnter(city,cityInput) class="form-control" placeholder="Change city" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-        {{city.weatherMain}} - {{city.weatherDesc}}
-    </div>
+<label class="text-capitalize">{{city.name}}</label>
+{{city.weatherMain}} - {{city.weatherDesc}}
+<div class = "d-flex justify-content-end">
+    <button type="button" class="align-bottom btn-sm w-50 btn btn-outline-light">edit</button>
 </div>
