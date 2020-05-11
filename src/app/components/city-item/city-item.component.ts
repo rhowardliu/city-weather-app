@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { City } from '../../models/City'
 import { CardComponent } from '../card/card.component';
-// import { createInput } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-city-item',

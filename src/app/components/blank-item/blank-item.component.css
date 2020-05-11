@@ -1,12 +1,9 @@
 .blank{
     display: flex;
-    color: black;
     align-items: center;
     justify-content: center;
 }
 .blank:hover{
     cursor: pointer;
     background: grey;
-
 }
-

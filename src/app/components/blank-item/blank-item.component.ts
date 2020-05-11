@@ -9,9 +9,11 @@ export class BlankItemComponent implements OnInit {
   @Input() enterCity:boolean;
   @Input() searchNotFound:boolean;
   @Output() searchCity = new EventEmitter<string>();
+  visibility:string;
   constructor() { }
 
   ngOnInit(): void {
+    this.visibility = "invisible";
   }
 
   onEnter(cityInput){
@@ -21,6 +23,10 @@ export class BlankItemComponent implements OnInit {
 
   onClickBlank(){
     this.enterCity = true;
+  }
+
+  changeStyle($event){
+    this.visibility = $event.type == 'mouseover' ? 'visible' : 'invisible';
   }
 
 
