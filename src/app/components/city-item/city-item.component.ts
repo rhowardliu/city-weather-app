@@ -20,13 +20,4 @@ export class CityItemComponent implements OnInit {
 
   }
 
-  // setClasses() {
-  //   let classes = {
-  //     default:this.city.default,
-  //     card: true
-  //   }
-  //   return classes;
-  // }
-
-
 }

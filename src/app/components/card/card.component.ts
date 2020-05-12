@@ -3,6 +3,7 @@ import { City } from "../../models/City";
 import { WeatherService } from "../../services/weather.service";
 import { interval } from "rxjs/internal/observable/interval";
 import { startWith, switchMap } from "rxjs/operators";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-card',
@@ -21,6 +22,7 @@ export class CardComponent implements OnInit {
     rain:"rainy",
     dust:"dust"
   };
+  subscriber;
 
 
 
@@ -38,6 +40,7 @@ export class CardComponent implements OnInit {
     this.city.cityFound = false;
     this.searchNotFound = false;
     this.bgimg = '';
+    this.subscriber.unsubscribe();
   }
   
 
@@ -46,7 +49,7 @@ export class CardComponent implements OnInit {
   }
 
   onSearchCity(newInput:string){
-    interval(30 * 1000).pipe(
+    this.subscriber = interval(30 * 1000).pipe(
       startWith(0),
       switchMap(()=>this.weatherService.getWeatherData(newInput))
     )
@@ -56,9 +59,12 @@ export class CardComponent implements OnInit {
       this.city.weatherDesc = res.weather[0].description;
       this.city.cityFound = true;
       this.bgimg = `url(${this.getBackgroundSrc(this.city.weatherMain)})`;
+      console.log(`Updated ${this.city.name}`);
     }, err=>{
+      console.log('City not found')
       this.city.cityFound = false;
       this.searchNotFound = true;
+      this.subscriber.unsubscribe();
     })
   }
 
